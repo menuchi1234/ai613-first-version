@@ -4,12 +4,12 @@ const initialState = {
     groupPrompts: [
         { id: 1, groupId: "123", content: "נטפרי לא מרשה לי", Status: "active" },
         { id: 2, groupId: "223", content: "תוכן לא רואי", Status: "active" },
-        { id: 3, groupId: "323", content: "יש לך עוד משהו אתה צריך עזרה?", Status: " not active" }
+        { id: 3, groupId: "323", content: "יש לך עוד משהו אתה צריך עזרה?", Status: "not active" }
     ],
     addPrompts: [
         { id: 4, groupId: "432", content: "תיתן רק דומגא אחת", Status: "active" },
-        { id: 5, groupId: "532", content: " איני ייכול לענות לך ", Status: " active" },
-        { id: 6, groupId: "632", content: "ששששש שב בשקט ותתמקד", Status: " active" }
+        { id: 5, groupId: "532", content: " איני ייכול לענות לך ", Status: "active" },
+        { id: 6, groupId: "632", content: "ששששש שב בשקט ותתמקד", Status: "active" }
     ],
 }
 export const GroupPromptsPage = createSlice({    
@@ -39,11 +39,18 @@ export const GroupPromptsPage = createSlice({
 
         },
         changePromptStatus: (state, action) => {
-            const { id, status } = action.payload;
-            const prom = state.groupPrompts.find(p => p.id === id);
-            if (prompt) {
-                prompt.Status = status;
+            const id = action.payload;
+            const prompt = state.groupPrompts.find(p => p.id === id);
+            if (prompt.Status=== "active") {
+             prompt.Status = "not active"
+            
+             alert ("הפרומפט הושהה בהצלחה")
+             
             }
+            else{
+                alert ("הפרומפט   לא פעיל כבר")
+            }
+          
         },
         removePrompt: (state, action) => {
             const id = action.payload;
