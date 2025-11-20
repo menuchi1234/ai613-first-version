@@ -37,6 +37,7 @@ function EditPromptPage() {
         navigate('-1');
     };
         return <>
+          <div className="prompt-container">
             <div>
                 <h2>עריכת פרומפט</h2>
                 < form onSubmit={handleSubmit} >
@@ -72,7 +73,7 @@ function EditPromptPage() {
 
                 </form>
             </div>
-
+</div>
         </>
     }
 

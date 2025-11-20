@@ -18,6 +18,7 @@ function GroupPromptsPage() {
   );
 
   return <>
+    <div className="prompt-container">
     <div>
       <input placeholder="חפש פרומפט ברשימה..."
         type="text" value={serch} onChange={(e) => setSerch(e.target.value)}
@@ -27,7 +28,7 @@ function GroupPromptsPage() {
       />
       <button type='button' onClick={() => navigate('/AddPromptPage')}>הוסף פרומפט חדש</button >
 
-      <ul>
+      <ul className="prompt-list">
         {sercch.map((groupPrompt) => (
 
           <li key={groupPrompt.id}>
@@ -54,7 +55,7 @@ function GroupPromptsPage() {
       <button disabled>שלח</button>
     </div>
 
-
+</div>
 
   </>
 }
